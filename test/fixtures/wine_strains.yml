@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wine: one
+  strain: one
+  percent: 1
+
+two:
+  wine: two
+  strain: two
+  percent: 1
