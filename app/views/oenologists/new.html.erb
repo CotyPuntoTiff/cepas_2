@@ -1,0 +1,44 @@
+<h2>Agrega un nuevo enologo</h2>
+
+<%= form_with(model: @oenologist, local: true) do |f| %>
+
+    <div>
+        <%= f.label "Nombre" %><br>
+        <%= f.text_field :name %> 
+    </div><br>
+
+    <div>
+        <%= f.label "Age" %><br>
+        <%= f.number_field :age %> 
+    </div><br>
+
+    <div>
+        <%= f.label "Nacionalidad" %><br>
+        <%= f.text_field :nationality %> 
+    </div><br>
+    
+    <div>
+        <%= f.label "Es editor" %> 
+        <%= f.check_box :editor %> <br />
+    </div>
+
+    <div>
+        <%= f.label "Es escritor" %> 
+        <%= f.check_box :writer %> <br />
+    </div>
+
+    <div>
+        <%= f.label "Es critico" %> 
+        <%= f.check_box :reviewer %> <br />
+    </div>
+
+    <h3>A que revista pertenece?</h3>
+
+    <% @magazines.each do |magazine| %>
+        <div>
+            <%= check_box(:oenologist, :magazine_ids, {multiple:true}, magazine.id, nil) %>
+            <span><%= magazine.name %></span>
+        </div> <br>
+    <% end %>
+        <%= f.submit %>
+<%end%>

@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Magazine.delete_all
+User.delete_all
 Strain.delete_all
+
 Strain.create(
     [
         {
@@ -22,6 +25,27 @@ Strain.create(
         },
         {
             name: 'Syrah'
+        }
+    ]
+)
+
+User.create(
+    email: 'peter@mail.com', password: '123456', admin: true
+)
+
+Magazine.create(
+    [
+        {
+            name: 'El buen catador'
+        },
+        {
+            name: 'La bodega del vino'
+        },
+        {
+            name: 'Club amantes del vino'
+        },
+        {
+            name: 'Vinetur'
         }
     ]
 )
